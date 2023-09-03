@@ -1,42 +1,32 @@
 \documentclass[a4paper]{article}
 
-% Options possibles : 10pt, 11pt, 12pt (taille de la fonte)
-%                     oneside, twoside (recto simple, recto-verso)
-%                     draft, final (stade de dÃ©veloppement)
-%                     titlepage, notitlepage (\maketitle prend une page
-%                                             Ã  part ou non)
+\usepackage[utf8]{inputenc}   
+\usepackage[T1]{fontenc}      
+\usepackage{geometry}  
+\usepackage{hyperref}       
+\usepackage[francais]{babel}  
+                          
 
-\usepackage[utf8]{inputenc}   % LaTeX, comprends les accents !
-\usepackage[T1]{fontenc}      % Police contenant les caractÃ¨res franÃ§ais
-\usepackage{geometry}         % DÃ©finir les marges
-\usepackage[francais]{babel}  % Placez ici une liste de langues, la
-                              % derniÃ¨re Ã©tant la langue principale
+% \pagestyle{headings}       
 
-% \pagestyle{headings}        % Pour mettre des entÃªtes avec les titres
-                              % des sections en haut de page
-
-\title{Le mot de la semaine}           % Les paramÃ¨tres du titreÂ : titre, auteur, date
-\author{Colonel Bertrand Boyer} %\and Autre Auteur}
- \date{}                     % La date n'est pas requise (la date du
-                              % jour de compilation est utilisÃ©e en son
-			      % absence
+\title{La Pyramid of Pain : l'arche perdue de la cybersécurité ?}          
+\author{Bertrand Boyer} %\and Autre Auteur}
+ \date{26 juillet 2023}                     
+			    
 \sloppy  
 \begin{document}
 
-\maketitle                  % Faire un titre utilisant les donnÃ©es
-                              % passÃ©es Ã  \title, \author et \date
+\maketitle                 
 
 %\frontmatter                  % Prologue
 
-\section{Voeux}
-2019 a tiré sa révérence il y a deux semaines et nous voici de retour "à poste" pour entamer un nouveau cycle. Nous aurons l'occasion le 20 janvier de partager une galette et, pour pouvoir être court dans le discours, je préfère vous adresser ces quelques lignes.
-Je tiens en premier lieu à vous présenter mes meilleurs voeuxainsi qu'à vos familles et ceux qui vous sont proches. Les voeux ne sont pas un simple "exercice de style" un peu convenu et quasi obligatoire, c'est l'occasion de marquer notre intérêt pour les autres et de leur communiquer un peu de force et de motivation pour faire face aux défis que chacun doit relever (tant sur le plan personnel et privé que professionnel).
+%\section{Voeux}
 
-je ne reviendrai pas longuement sur 2019, elle a apporté son lot de réuissites, pour lesquelles il faut féliciter justement ceux qui ont oeuvré (LRMC, notes de renseignement, réponses à sollicitations, présentations, opérations extèrieures, etc.), et de joies individuelles (avec plusieurs naissances). 2019 a vu également certains de nos camarades touchés par le deuil, nous avons à cette occasion collectivement et individuellement marqué notre soutien, ne l'oublions pas.
+Dans notre étude des concepts et des modèles d’analyse appliqués à la cyber sécurité, après \href{https://www.m82-project.com/post/disarm-un-pas-vers-la-cti-pour-lutter-contre-la-désinformation}{la « reine » des matrices (i.e MITRE ATT\&CK)} nous explorons dans ce post la « Pyramid of Pain », l’échelle de la douleur de l’attaquant ! Se replonger dans ces concepts de cybersécurité permet de faire évoluer les modèles et les pratiques qui se développent dans le cadre de la lutte contre les campagnes numériques de manipulation de l’information. 
 
-Au-delà des constats il nous faut conserver notre force motrice qui, en dépit des échecs et tracas que nous pouvons rencontrer nous fait avancer et progresser. J'aime cette phrase de Nelson Mandela qui dit "soit je gagne, soit j'apprends" (either i win, or i learn). 
+En 2013, dans un post de blog, David Bianco, expert reconnu en cybersécurité, pose les bases d’un concept qui classe les indicateurs de compromission (IOCs) suivant un niveau de difficulté. Avec la publication du premier rapport Mandiant sur une Advance Persistant Threat (APT), l’année 2013 marque véritablement un tournant dans le développement de la CTI et de la cyberdéfense de manière générale. Mais à quoi peut bien servir cette « échelle de la douleur » ? 
 
-Aussi pour 2020 mes voeux tiennent en deux mots: courage et engagement.
+Tout d’abord, cette échelle possède un double sens de lecture : pour le défenseur d'une part, elle informe sur le niveau de difficulté à détecter un élément de l'attaque et pour l'attaquant d’autre part, elle illustre l’impact de la perte de cet IOC s’il était détecté ou neutralisé. Cette double approche fait de la « pyramide » un outils simple et relativement opératoire pour développer des opérations de threat hunting et se concentrer sur ce qui est le plus efficace. Suivant cette approche, une « pyramide de la douleur » peut ainsi être construite également dans le cadre d’une campagne de manipulation de l’information. L’attaquant ayant à mettre en œuvre une série d’étapes qui requièrent chacune des niveaux variés d’investissement (financier, humain ou technique). 
 
-\textbf{courage}
-Courage d'abord car sans lui rien ne peut être accompli. L
+
+\end{document}
