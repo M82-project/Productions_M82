@@ -1,0 +1,42 @@
+\documentclass[a4paper]{article}
+
+% Options possibles : 10pt, 11pt, 12pt (taille de la fonte)
+%                     oneside, twoside (recto simple, recto-verso)
+%                     draft, final (stade de dÃ©veloppement)
+%                     titlepage, notitlepage (\maketitle prend une page
+%                                             Ã  part ou non)
+
+\usepackage[utf8]{inputenc}   % LaTeX, comprends les accents !
+\usepackage[T1]{fontenc}      % Police contenant les caractÃ¨res franÃ§ais
+\usepackage{geometry}         % DÃ©finir les marges
+\usepackage[francais]{babel}  % Placez ici une liste de langues, la
+                              % derniÃ¨re Ã©tant la langue principale
+
+% \pagestyle{headings}        % Pour mettre des entÃªtes avec les titres
+                              % des sections en haut de page
+
+\title{Le mot de la semaine}           % Les paramÃ¨tres du titreÂ : titre, auteur, date
+\author{Colonel Bertrand Boyer} %\and Autre Auteur}
+ \date{}                     % La date n'est pas requise (la date du
+                              % jour de compilation est utilisÃ©e en son
+			      % absence
+\sloppy  
+\begin{document}
+
+\maketitle                  % Faire un titre utilisant les donnÃ©es
+                              % passÃ©es Ã  \title, \author et \date
+
+%\frontmatter                  % Prologue
+
+\section{Voeux}
+2019 a tiré sa révérence il y a deux semaines et nous voici de retour "à poste" pour entamer un nouveau cycle. Nous aurons l'occasion le 20 janvier de partager une galette et, pour pouvoir être court dans le discours, je préfère vous adresser ces quelques lignes.
+Je tiens en premier lieu à vous présenter mes meilleurs voeuxainsi qu'à vos familles et ceux qui vous sont proches. Les voeux ne sont pas un simple "exercice de style" un peu convenu et quasi obligatoire, c'est l'occasion de marquer notre intérêt pour les autres et de leur communiquer un peu de force et de motivation pour faire face aux défis que chacun doit relever (tant sur le plan personnel et privé que professionnel).
+
+je ne reviendrai pas longuement sur 2019, elle a apporté son lot de réuissites, pour lesquelles il faut féliciter justement ceux qui ont oeuvré (LRMC, notes de renseignement, réponses à sollicitations, présentations, opérations extèrieures, etc.), et de joies individuelles (avec plusieurs naissances). 2019 a vu également certains de nos camarades touchés par le deuil, nous avons à cette occasion collectivement et individuellement marqué notre soutien, ne l'oublions pas.
+
+Au-delà des constats il nous faut conserver notre force motrice qui, en dépit des échecs et tracas que nous pouvons rencontrer nous fait avancer et progresser. J'aime cette phrase de Nelson Mandela qui dit "soit je gagne, soit j'apprends" (either i win, or i learn). 
+
+Aussi pour 2020 mes voeux tiennent en deux mots: courage et engagement.
+
+\textbf{courage}
+Courage d'abord car sans lui rien ne peut être accompli. L
