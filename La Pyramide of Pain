@@ -28,5 +28,46 @@ En 2013, dans un post de blog, David Bianco, expert reconnu en cybersécurité, 
 
 Tout d’abord, cette échelle possède un double sens de lecture : pour le défenseur d'une part, elle informe sur le niveau de difficulté à détecter un élément de l'attaque et pour l'attaquant d’autre part, elle illustre l’impact de la perte de cet IOC s’il était détecté ou neutralisé. Cette double approche fait de la « pyramide » un outils simple et relativement opératoire pour développer des opérations de threat hunting et se concentrer sur ce qui est le plus efficace. Suivant cette approche, une « pyramide de la douleur » peut ainsi être construite également dans le cadre d’une campagne de manipulation de l’information. L’attaquant ayant à mettre en œuvre une série d’étapes qui requièrent chacune des niveaux variés d’investissement (financier, humain ou technique). 
 
+\section{La Pyramide de la douleur : bref aperçu}
+Pour son concepteur, il s’agit d’identifier les indicateurs techniques qui demandent le plus de ressources à mettre en place pour un acteur malveillant. Cette mise en parallèle entre IOC et « niveau d’effort » consenti par un attaquant est particulièrement intéressante lorsque l’on cherche à porter durablement des coups à un mode opératoire connu. Elle traduit par ailleurs le niveau d’investissement de l’attaquant face à une cible ou au sein d’une campagne.
+\includegraphics{Pyramide of pain.jpg}
 
+Dans cette vision, les IOC peuvent être divisés en deux grands ensembles :
+
+●     IOCs comportementaux, qui caractérisent l’attaquant et ses méthodes. On retrouve ici le « haut de la pyramide », les tactiques, techniques et procédures (TTPs), les outils (tools), les artefacts réseaux et locaux (networks and Hos artifacts).
+
+●   IOCs traditionnels, qui sont en général des données techniques rattachées à la supervision et à la collecte de log. On place ainsi dans cette catégorie, le milieu et la base de la pyramide, les noms de domaine, les adresses IP ou les hash.
+
+Évidemment, pour le défenseur, détecter et supprimer les IOCs comportementaux s’avère extrêmement complexe mais particulièrement efficace pour lutter contre un mode opératoire adverse. En 2019, sur son blog, SEKOIA propose d’étendre la pyramide en ajoutant à son sommet, le Graal de la CTI : l’identité réelles et numériques des attaquants.
+
+Dans la version initiale, on peut schématiquement présenter les 6 niveaux de la pyramide comme suit :
+
+Hash values (trivial) : strate la plus basse qui rassemble les empreintes cryptographiques des fichiers déployés par les attaquants (exécutables, configuration, etc.). Ces indicateurs, généralement fiables (pas de faux-positifs), sont par ailleurs facilement modifiables (une modification minime du fichier entraine une empreinte différente) c’est la raison pour laquelle ils sont au bas de la pyramide. Facile à détecter mais également facile à modifier par l’attaquant.
+
+IP Adresses (facile) : indicateur le plus courant dans l’analyse réseau il est pourtant relativement peu pertinent tant il est volatil et là encore assez facilement modifiable. Ainsi, la perte de cet élément pour l’attaquant est quasi indolore. En revanche l’indicateur conserve bien évidement sa pertinence pour le défenseur dans l’analyse de log.
+
+Nom de domaine (simple) : après le système d’adressage (IP adress) vient naturellement le nommage. Ici les domaines et sous-domaines sont des indicateurs assez intéressants car ils nécessitent pour l’attaquant d’effectuer (en général) une démarche de dépôt et d’enregistrement. Il lui faut donc en quelques sorte laisser des traces (payer, fournir une adresse mail de contact). La perte, le blocage ou la compromission (et oui l’arroseur arrosé ce n’est pas qu’au cinéma) d’un tel actif présente donc certains inconvénients pour l’attaquant et peut même conduire à des fautes de sécurité. C’est donc fâcheux mais encore simple pour y remédier. 
+
+Network/Host Artifacts (ennuyeux) : les artefacts réseaux et locaux sont liés à l’activité de l’attaquant sur la cible, il s’agit des flux entrants/sortants et de leurs caractéristiques. Ils permettent aux équipes de sécurité de définir assez clairement ce qui relève d’une activité légitime ou pas. Ils peuvent en outre contenir des informations de valeurs sur l’infrastructure d’attaque (URLs, serveurs de command and control, etc.). Détecter et neutraliser ces indicateurs constituent donc un véritable problème pour l’attaquant et ralentira significativement son action.
+
+Tools (problématique) : « Chef, on a un problème ». Les outils déployés par un acteur malveillant sont bien souvent longs à développer, taillés sur mesure par rapport à la cible et aux objectifs poursuivis. Sur la base des artefacts détectés au préalable, l’identification des outils logiciels de l’attaquant porte un coup sévère à son action.
+
+TTPs (fatal) : Un groupe malveillant est généralement identifié suivant son mode opératoire, les TTPs sont donc cette signature (que l’on espère unique) qui caractérise un groupe. Cette approche comportementale, permet d’indenter un acteur, non plus sur la simple base de la détection d’outils mais bien sur des inputs comportementaux et sur ces choix (volontaires ou involontaires). 
+
+Une autre approche en 2020 complète le travail de David Bianco et propose de subdiviser le sommet de la pyramide pour différencier les tactiques, techniques et procédures et ainsi faciliter le traitement et l’intégration avec le framework MITRE ATT\&CK
+
+Source : https://scythe.io/library/summiting-the-pyramid-of-pain-the-ttp-pyramid
+
+Tout l’enjeu de la CTI consiste donc à déterminer où porter son effort pour maximiser les chances de succès. Clairement le sommet de la pyramide présente un intérêt majeur mais également le plus de difficultés.
+
+\section{Application et adaptation pour la lutte contre les campagnes de désinformation }
+
+Mais à quoi peut bien servir cette pyramide et comment la mettre en œuvre ?
+
+À vrai dire une rapide recherche avec votre moteur de recherche préféré (celui qui préserve un peu vos données personnelles), ne donne pas grand-chose de très concluant. Visiblement depuis 10 ans, la pyramide n’a pas vraiment évolué et ses applications pratiques ne sautent pas aux yeux. Pourtant, elle marque une étape importante dans la courte histoire de la CTI et lance les travaux méthodologiques au moment même où se conçoivent le modèle diamant et la célèbre cyber kill chain (2011) de Lockheed Martin. Il faut en effet avoir en tête qu’il faut attendre 2015 pour voir le framework MITRE ATT&CK être utilisé, soit deux ans après la pyramide. Celle-ci apparait donc au moment où fleurissent de nombreuses tentatives de modélisations des menaces. Si elle n’est pas un outil de CTI en elle-même, elle complète l’analyse et permet d’affiner les stratégies de détection, voire de hunting. 
+
+En matière de campagne de manipulation de l’information, nous sommes probablement en "2013", les premier rapports ont été publiés par plusieurs organismes et Etats (dont la France avec le rapport RRN) et le sujet devient un champ d'étude à part entière. Ainsi, si l'on souhaite transposer la pyramide à ce nouveau domaine, la première étape consiste à définir ce que peut être un indicateur de compromission (IOC) qui dans le cas d’espèce serait un indicateur of manipulation (IOM ?). On retrouve ainsi la notion de noms de domaine comme indicateur dans une campagne de désinformation mais il reste à le placer sur la pyramide. La base étant sans doute constituée des "produits et narratifs" diffusés. Dans dans un second temps il faudrait s’attacher à différencier les indicateurs comportementaux des indicateurs plus techniques (l’équivalent des logs). La structure même du framework DISARM permet de dresser une première analogie avec la CTI et donc d’imaginer pouvoir établir un score de pénibilité pour les différentes actions listées. Mais la route est encore longue.
+
+\section{Conclusion}
+La pyramide a, lors de son développement il y a 10 ans, permis de compléter les bases conceptuelles de la CTI au moment où les différents frameworks étaient en construction. Outil assez simple elle permet toutefois d’ouvrir sur une approche fondée sur le coût d’une attaque et donc le rapport coût sur investissement qui permet lui aussi de mieux caractériser un attaquant. À l’heure où nous puisons dans la CTI pour développer des méthodologies en matière de lutte contre la désinformation, la pyramide et son approche par les coûts mérite sans doute d’être dépoussiérée.
 \end{document}
